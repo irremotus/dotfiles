@@ -1,0 +1,7 @@
+#!/bin/bash
+
+dfs="vimrc"
+
+for f in $dfs; do
+	cp -v "$HOME/.$f" "$HOME/dotfiles/$f"
+done
