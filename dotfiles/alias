@@ -15,4 +15,5 @@ alias ca='git add --all && git commit -m'
 alias gl='git log'
 alias gd='git diff'
 
+# bash
 alias ..='cd ..'
