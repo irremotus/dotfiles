@@ -1,0 +1,18 @@
+# git
+alias s='git status'
+alias f='git fetch'
+alias pu='git push'
+alias pl='git pull'
+alias cm='git commit -m'
+alias co='git checkout'
+alias cb='git checkout -b'
+alias a='git add'
+alias aa='git add --all'
+alias b='git branch'
+alias bd='git branch -d'
+alias m='git merge'
+alias ca='git add --all && git commit -m'
+alias gl='git log'
+alias gd='git diff'
+
+alias ..='cd ..'
