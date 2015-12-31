@@ -11,10 +11,12 @@ SCRIPT_DIR=$(dirname $(readlink -fn $0))
 cd ${SCRIPT_DIR}/../
 
 while read f; do
-	cp -v "${HOMEDIR}/.$f" "dotfiles/$f"
+	if [ ! -f "dotfiles/$f" ]; then
+		ln "${HOMEDIR}/.$f" "dotfiles/$f"
+	fi
 done < ${HOMEDIR}/.dotfiles
 
-git add dotfiles
+git add dotfiles/
 git commit -m "$1"
 git pull
 git push
