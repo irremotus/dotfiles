@@ -6,7 +6,12 @@ SCRIPT_DIR="$(dirname $(readlink -fn $0))"
 cd ${SCRIPT_DIR}/../
 git pull
 
+if [ ! -d dotfiles/.backup ]; then
+	mkdir dotfiles/.backup
+fi
+
 while read f; do
+	cp "${HOMEDIR}/.$f" "dotfiles/.backup/$f"
 	cp -v "dotfiles/$f" "${HOMEDIR}/.$f"
 done < ${HOMEDIR}/.dotfiles
 
