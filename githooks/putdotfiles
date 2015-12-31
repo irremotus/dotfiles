@@ -3,5 +3,5 @@
 HOMEDIR="${HOME}"
 
 while read f; do
-	cp -v "${HOMEDIR}/.$f" "${HOMEDIR}/dotfiles/$f"
+	cp -v "${HOMEDIR}/.$f" "${HOMEDIR}/dotfiles/dotfiles/$f"
 done < ${HOMEDIR}/.dotfiles
