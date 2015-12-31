@@ -2,6 +2,12 @@
 
 HOMEDIR="${HOME}"
 
+SCRIPT_DIR="$(dirname $(readlink -fn $0))"
+cd ${SCRIPT_DIR}/../
+git pull
+
 while read f; do
-	cp -v "${HOMEDIR}/dotfiles/dotfiles/$f" "${HOMEDIR}/.$f"
+	cp -v "dotfiles/$f" "${HOMEDIR}/.$f"
 done < ${HOMEDIR}/.dotfiles
+
+cd -

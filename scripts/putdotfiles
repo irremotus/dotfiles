@@ -1,7 +1,20 @@
 #!/bin/bash
 
+if [ $# -lt 2 ]; then
+	echo 'Usage: putdotfiles <commit message>'
+	exit 1
+fi
+
 HOMEDIR="${HOME}"
 
+SCRIPT_DIR=$(dirname $(readlink -fn $0))
+cd ${SCRIPT_DIR}/../
+
 while read f; do
-	cp -v "${HOMEDIR}/.$f" "${HOMEDIR}/dotfiles/dotfiles/$f"
+	cp -v "${HOMEDIR}/.$f" "dotfiles/$f"
 done < ${HOMEDIR}/.dotfiles
+
+git add dotfiles
+git commit -m "$1"
+git push
+cd -
