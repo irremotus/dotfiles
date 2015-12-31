@@ -15,4 +15,4 @@ while read f; do
 	cp -v "dotfiles/$f" "${HOMEDIR}/.$f"
 done < ${HOMEDIR}/.dotfiles
 
-cd -
+cd - > /dev/null
